@@ -21,5 +21,12 @@ describe Bank do
       subject.withdraw(300)
       expect(subject.balance).to eq 200
     end
+
+    it "should account for multiple deposits and withdrawals" do
+      subject.deposit(500)
+      subject.withdraw(100)
+      subject.withdraw(100)
+      expect(subject.balance).to eq 300
+    end
   end
 end
