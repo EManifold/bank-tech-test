@@ -12,6 +12,14 @@
         1,
         null,
         null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
         null
       ],
       "/Users/elizabethmanifold/dev/Makers/Week-10/tech-tests/bank-tech-test/lib/bank.rb": [
@@ -19,7 +27,11 @@
         1,
         null,
         1,
+        2,
+        null,
+        null,
         1,
+        2,
         null,
         null,
         1,
@@ -28,6 +40,6 @@
         null
       ]
     },
-    "timestamp": 1580132620
+    "timestamp": 1580133083
   }
 }
