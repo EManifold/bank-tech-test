@@ -44,7 +44,7 @@
 
 AllCops:
   Exclude:
-    - 'spec/unit/bank_spec.rb'
+    - 'spec/unit/account_spec.rb'
 
 Metrics/LineLength:
   Exclude:

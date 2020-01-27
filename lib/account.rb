@@ -1,19 +1,20 @@
-class Bank
+class Account
   attr_reader :balance
 
-  def initialize(balance = 0)
+  def initialize(balance = 0, transactions = Transactions.new)
     @balance = balance
+    @transactions = transactions
   end
 
   def deposit(amount)
     raise 'Please enter a valid number amount' unless valid?(amount)
-
     @balance += amount
+    @transactions.deposit(amount, @balance)
   end
 
   def withdraw(amount)
     raise 'Please enter a valid number amount' unless valid?(amount)
-    
+
     @balance -= amount
   end
 
