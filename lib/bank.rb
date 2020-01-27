@@ -6,14 +6,14 @@ class Bank
   end
 
   def deposit(amount)
-    if valid?(amount)
-      @balance += amount
-    else
-      raise 'Please enter a valid number amount'
-    end
+    raise 'Please enter a valid number amount' unless valid?(amount)
+
+    @balance += amount
   end
 
   def withdraw(amount)
+    raise 'Please enter a valid number amount' unless valid?(amount)
+    
     @balance -= amount
   end
 
