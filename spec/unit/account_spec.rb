@@ -2,7 +2,7 @@ require 'account'
 
 describe Account do
 
-  let(:date) { Time.now.to_s[0...10] }
+  # let(:date) { Time.now.to_s[0...10] }
   let(:transaction) { double :transaction }
 
 
@@ -60,5 +60,9 @@ describe Account do
     #   end
     #   expect(account_double.withdraw(amount)).to eq transaction.withdraw(amount, balance)
     # end
+
+    it "should return an error if the withdrawal amount would go below 0" do
+      expect { subject.withdraw(100) }.to raise_error 'You do not have enough funds to withdraw that amount'
+    end
   end
 end
