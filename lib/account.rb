@@ -8,14 +8,18 @@ class Account
 
   def deposit(amount)
     raise 'Please enter a valid number amount' unless valid?(amount)
+
     @balance += amount
     @transactions.deposit(amount, @balance)
+    @balance
   end
 
   def withdraw(amount)
     raise 'Please enter a valid number amount' unless valid?(amount)
 
     @balance -= amount
+    @transactions.withdraw(amount, @balance)
+    @balance
   end
 
   private
