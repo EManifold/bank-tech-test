@@ -13,6 +13,10 @@ describe Bank do
       subject.deposit(400)
       expect(subject.balance).to eq 900
     end
+
+    it "should return an error if the deposit amount is not a valid number" do
+      expect { subject.deposit('M') }.to raise_error 'Please enter a valid number amount'
+    end
   end
 
   describe '#withdraw' do
