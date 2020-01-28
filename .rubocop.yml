@@ -45,6 +45,8 @@
 AllCops:
   Exclude:
     - 'spec/unit/account_spec.rb'
+    - 'spec/feature/account_withdrawal_and_deposit_spec.rb'
+    - 'spec/spec_helper.rb'
 
 Metrics/LineLength:
   Exclude:

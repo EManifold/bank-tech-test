@@ -33,8 +33,8 @@ describe 'Bank account' do
       account_test.deposit(400)
       account_test.withdraw(200)
       expect(statement_test.print_all).to eq "date || credit || debit || balance/n"\
-      "#{Time.now.to_s[0...10]} || || 200.00 || 200.00/n"\
-      "#{Time.now.to_s[0...10]} || 400.00 || || 400.00"
+      "#{Time.now.strftime("%d/%m/%Y")} || || 200.00 || 200.00/n"\
+      "#{Time.now.strftime("%d/%m/%Y")} || 400.00 || || 400.00"
     end
   end
 end
