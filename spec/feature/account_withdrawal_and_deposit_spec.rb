@@ -1,4 +1,6 @@
-describe 'Account' do
+require 'timecop'
+
+describe 'Bank account' do
   let(:transactions_test) { Transactions.new }
   let(:account_test) { Account.new(0, transactions_test) }
   let(:statement_test) { Statement.new(transactions_test) }
@@ -24,5 +26,15 @@ describe 'Account' do
   it "withdrawing more than your available balance will raise an error" do
     account_test.deposit(100)
     expect { account_test.withdraw(200) }.to raise_error 'You do not have enough funds to withdraw that amount'
+  end
+
+  it "depositing 400 then withdrawing 200 should show as the relevant transactions on the statement" do
+    Timecop.freeze do
+      account_test.deposit(400)
+      account_test.withdraw(200)
+      expect(statement_test.print_all).to eq "date || credit || debit || balance/n"\
+      "#{Time.now.to_s[0...10]} || || 200.00 || 200.00/n"\
+      "#{Time.now.to_s[0...10]} || 400.00 || || 400.00"
+    end
   end
 end
