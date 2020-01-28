@@ -12,5 +12,4 @@ class Transactions
       @log << [Time.now.strftime("%d/%m/%Y"), '', sprintf('%.2f', amount), sprintf('%.2f', balance)]
     end
   end
-
 end

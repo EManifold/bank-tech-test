@@ -43,3 +43,7 @@ So, my final product consists of three classes, a more appropriately named ```Ac
 - rubocop: As a linter
 - simplecov: For code coverage
 - timecop: To mock time when testing
+
+## Usage in IRB
+
+![Screenshot 2020-01-28 at 14 22 01](https://user-images.githubusercontent.com/53044792/73272060-aaf34600-41d9-11ea-8f61-103e7ad18109.png)
