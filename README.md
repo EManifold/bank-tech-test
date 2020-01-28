@@ -10,6 +10,27 @@ This project was set out by Makers as an example tech tests. It is a functioning
 - To see detailed test coverage run ``` $ open coverage/index.html ```
 - To run linter run ``` $ rubocop ```
 
+## How to run
+Example run in IRB:
+
+- ``` $ irb -r ./lib/account.rb -r ./lib/transactions.rb -r ./lib/statement.rb ```
+
+[IRB]  
+- ``` transactions = Transactions.new ```
+- ``` account = Account.new(0, transactions) ```
+- ``` statement = Statement.new(transactions) ```
+- ``` account.deposit(300) ```
+- ``` account.deposit(200) ```
+- ``` account.withdraw(100) ```
+- ``` statement.print_all ```
+
+This will output your statement:  
+
+date || credit || debit || balance  
+28/01/2020 || || 100.00 || 400.00  
+28/01/2020 || 200.00 || || 500.00  
+28/01/2020 || 300.00 || || 300.00  
+
 ## User Stories
 As a user,  
 So I can know how much money I have,  
@@ -44,7 +65,3 @@ So, my final product consists of three classes, a more appropriately named ```Ac
 - rubocop: As a linter
 - simplecov: For code coverage
 - timecop: To mock time when testing
-
-## Usage in IRB
-
-![Screenshot 2020-01-28 at 14 22 01](https://user-images.githubusercontent.com/53044792/73272060-aaf34600-41d9-11ea-8f61-103e7ad18109.png)
