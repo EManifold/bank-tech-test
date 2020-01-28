@@ -6,11 +6,11 @@ class Transactions
   end
 
   def deposit(amount, balance)
-    @log << { date: Time.now.to_s[0...10], credit: amount, debit: 0, balance: balance }
+    @log << [Time.now.to_s[0...10], sprintf('%.2f', amount), '', sprintf('%.2f', balance)]
   end
 
   def withdraw(amount, balance)
-    @log << { date: Time.now.to_s[0...10], credit: 0, debit: amount, balance: balance }
+    @log << [Time.now.to_s[0...10], '', sprintf('%.2f', amount), sprintf('%.2f', balance)]
   end
 
 end

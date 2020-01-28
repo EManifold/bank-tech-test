@@ -13,4 +13,5 @@ group :test do
   # Test coverage
   gem 'simplecov', '~> 0.12.0'
   gem 'simplecov-console', require: false
+  gem 'timecop', '~> 0.8.1'
 end

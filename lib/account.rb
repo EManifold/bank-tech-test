@@ -16,7 +16,7 @@ class Account
 
   def withdraw(amount)
     raise 'Please enter a valid number amount' unless valid?(amount)
-    raise 'You do not have enough funds to withdraw that amount' unless @balance - amount >= 0
+    raise 'You do not have enough funds to withdraw that amount' unless @balance >= amount
 
     @balance -= amount
     @transactions.withdraw(amount, @balance)
