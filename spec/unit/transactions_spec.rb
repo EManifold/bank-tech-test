@@ -15,7 +15,8 @@ describe Transactions do
       Timecop.freeze do
         subject.entry(500, 900, :credit)
         subject.entry(300, 600, :debit)
-        expect(subject.log).to eq [[Time.now.strftime("%d/%m/%Y"), "500.00", '', "900.00"], [Time.now.strftime("%d/%m/%Y"), '', "300.00", "600.00"]]
+        expect(subject.log).to eq [[Time.now.strftime("%d/%m/%Y"), "500.00", '', "900.00"],
+                                  [Time.now.strftime("%d/%m/%Y"), '', "300.00", "600.00"]]
       end
     end
   end
