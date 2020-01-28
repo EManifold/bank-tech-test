@@ -5,15 +5,15 @@ class Statement
   end
 
   def header
-    "date || credit || debit || balance/n"
+    "date || credit || debit || balance"
   end
 
   def print_all
     raise "You have no transactions to view" unless @transactions.log[0]
-    
-    statement = @transactions.log.reverse.map do |transaction|
-      transaction.join(' || ')
+
+    puts header
+    @transactions.log.reverse.map do |transaction|
+      puts transaction.join(' || ').gsub("||  ||", "|| ||")
     end
-    (header + statement.join("/n")).gsub("||  ||", "|| ||")
   end
 end

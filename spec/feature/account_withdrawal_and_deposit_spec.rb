@@ -33,9 +33,9 @@ describe 'Bank account' do
     Timecop.freeze do
       account_test.deposit(400)
       account_test.withdraw(200)
-      expect(statement_test.print_all).to eq "date || credit || debit || balance/n"\
-      "#{Time.now.strftime("%d/%m/%Y")} || || 200.00 || 200.00/n"\
-      "#{Time.now.strftime("%d/%m/%Y")} || 400.00 || || 400.00"
+      expect { statement_test.print_all }.to output("date || credit || debit || balance\n"\
+      "#{Time.now.strftime("%d/%m/%Y")} || || 200.00 || 200.00\n"\
+      "#{Time.now.strftime("%d/%m/%Y")} || 400.00 || || 400.00\n").to_stdout
     end
   end
 end

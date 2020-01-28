@@ -12,9 +12,9 @@ describe Statement do
                                              [date, "300.00", '', "800.00"]]
                               }
         statement = Statement.new(transaction)
-        expect(statement.print_all).to eq "date || credit || debit || balance/n"\
-        "#{date} || 300.00 || || 800.00/n"\
-        "#{date} || 500.00 || || 500.00"
+        expect { statement.print_all }.to output("date || credit || debit || balance\n"\
+        "#{date} || 300.00 || || 800.00\n"\
+        "#{date} || 500.00 || || 500.00\n").to_stdout
       end
     end
 
