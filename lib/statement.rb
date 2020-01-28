@@ -9,6 +9,8 @@ class Statement
   end
 
   def print_all
+    raise "You have no transactions to view" unless @transactions.log[0]
+    
     statement = @transactions.log.reverse.map do |transaction|
       transaction.join(' || ')
     end

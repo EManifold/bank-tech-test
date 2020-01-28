@@ -17,5 +17,11 @@ describe Statement do
         "#{date} || 500.00 || || 500.00"
       end
     end
+
+    it "should return an error if there are no transactions to print" do
+      allow(transaction).to receive(:log) { [] }
+      statement = Statement.new(transaction)
+      expect { statement.print_all }.to raise_error "You have no transactions to view"
+    end
   end
 end
