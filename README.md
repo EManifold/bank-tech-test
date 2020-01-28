@@ -8,6 +8,7 @@ This project was set out by Makers as an example tech tests. It is a functioning
 - ``` $ bundle install ```
 - To see tests run ``` $ rspec ```
 - To see detailed test coverage run ``` $ open coverage/index.html ```
+- To run linter run ``` $ rubocop ```
 
 ## User Stories
 As a user,  
