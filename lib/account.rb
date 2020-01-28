@@ -10,7 +10,7 @@ class Account
     raise 'Please enter a valid number amount' unless valid?(amount)
 
     @balance += amount
-    @transactions.deposit(amount, @balance)
+    @transactions.entry(amount, @balance, :credit)
     @balance
   end
 
@@ -19,7 +19,7 @@ class Account
     raise 'You do not have enough funds to withdraw that amount' unless @balance >= amount
 
     @balance -= amount
-    @transactions.withdraw(amount, @balance)
+    @transactions.entry(amount, @balance, :debit)
     @balance
   end
 

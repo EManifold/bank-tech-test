@@ -5,12 +5,12 @@ class Transactions
     @log = []
   end
 
-  def deposit(amount, balance)
-    @log << [Time.now.strftime("%d/%m/%Y"), sprintf('%.2f', amount), '', sprintf('%.2f', balance)]
-  end
-
-  def withdraw(amount, balance)
-    @log << [Time.now.strftime("%d/%m/%Y"), '', sprintf('%.2f', amount), sprintf('%.2f', balance)]
+  def entry(amount, balance, type)
+    if type == :credit
+      @log << [Time.now.strftime("%d/%m/%Y"), sprintf('%.2f', amount), '', sprintf('%.2f', balance)]
+    else
+      @log << [Time.now.strftime("%d/%m/%Y"), '', sprintf('%.2f', amount), sprintf('%.2f', balance)]
+    end
   end
 
 end
