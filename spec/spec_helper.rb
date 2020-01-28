@@ -1,14 +1,15 @@
-require 'rspec'
 
 require 'simplecov'
+SimpleCov.start
+
 require 'simplecov-console'
+require 'rspec'
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console
+  SimpleCov::Formatter::Console,
   # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
+  SimpleCov::Formatter::HTMLFormatter
 ])
-SimpleCov.start
 
 ENV['ENVIRONMENT'] = 'test'
 

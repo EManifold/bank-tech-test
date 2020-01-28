@@ -3,8 +3,6 @@ require 'timecop'
 
 describe Transactions do
 
-  # let(:date) { Date.today }
-
   describe '#deposit' do
     it "should create an array based on how much was deposited" do
       Timecop.freeze do
