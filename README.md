@@ -6,7 +6,8 @@ This project was set out by Makers as an example tech tests. It is a functioning
 ## Installation
 - Clone this repository
 - ``` $ bundle install ```
-- To see tests run ``` rspec ```
+- To see tests run ``` $ rspec ```
+- To see detailed test coverage run ``` $ open coverage/index.html ```
 
 ## User Stories
 As a user,  
@@ -33,3 +34,12 @@ I want to get an error if I try to withdraw below a balance of £0.
 I initially wanted four classes: ```Errors```, ```Time```, ```Bank```, ```Statement```. However, upon realising that ```Errors``` and 'Time' were small enough to simply include in the classes they were required in, these were removed. I then decided to add a separate ```Transactions``` class, in order to format the individual transaction into a form that can be added to the transaction log, also included in this class. This included adding whether it was credit or debit, and the date.
 
 So, my final product consists of three classes, a more appropriately named ```Account``` class (with a deposit, withdraw and balance method, and error raising if necessary), a ```Transaction``` class (the function of which is explained above), and a ```Statement``` class. This ```Statement``` class joins the transaction log and formats it in the way that is required in order to view a reverse chronological and easy-to-read statement.
+
+## Technologies Used
+- ruby
+- RSpec
+
+## Dependencies
+- rubocop: As a linter
+- simplecov: For code coverage
+- timecop: To mock time when testing
