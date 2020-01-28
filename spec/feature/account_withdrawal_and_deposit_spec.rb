@@ -11,7 +11,7 @@ describe 'Bank account' do
 
   it "depositing 400 then withdrawing 200 should give you a balance of 200" do
     account_test.deposit(400)
-    expect(account_test.withdraw(200)).to eq 200
+    expect(account_test.withdraw(100)).to eq 300
   end
 
   it "depositing a number below zero will return an error" do
