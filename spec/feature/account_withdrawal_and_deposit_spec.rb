@@ -6,7 +6,8 @@ describe 'Bank account' do
   let(:statement_test) { Statement.new(transactions_test) }
 
   it "depositing 500 should return a balance of 500" do
-    expect(account_test.deposit(500)).to eq 500
+    account_test.deposit(500)
+    expect(account_test.balance).to eq 500
   end
 
   it "depositing 400 then withdrawing 200 should give you a balance of 200" do

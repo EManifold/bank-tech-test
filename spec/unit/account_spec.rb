@@ -3,6 +3,10 @@ require 'account'
 describe Account do
 
   describe '#deposit' do
+    it "should return a message telling you your new balance" do
+      expect(subject.deposit(500)).to eq "Thankyou. Your new balance is 500.00"
+    end
+
     it "should increase the balance by 500 when you deposit 500" do
       subject.deposit(500)
       expect(subject.balance).to eq 500.00
@@ -20,6 +24,11 @@ describe Account do
   end
 
   describe '#withdraw' do
+    it "should return a message telling you your new balance" do
+      subject.deposit(500)
+      expect(subject.withdraw(300)).to eq "Thankyou. Your new balance is 200.00"
+    end
+
     it "should decrease the balance by 300 when you deposit 300" do
       subject.deposit(500)
       subject.withdraw(300)

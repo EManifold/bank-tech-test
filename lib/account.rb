@@ -16,7 +16,7 @@ class Account
 
     @balance += amount
     @transactions.entry(amount, @balance, :credit)
-    @balance
+    "Thankyou. Your new balance is #{@balance}.00"
   end
 
   def withdraw(amount)
@@ -25,7 +25,7 @@ class Account
 
     @balance -= amount
     @transactions.entry(amount, @balance, :debit)
-    @balance
+    "Thankyou. Your new balance is #{@balance}.00"
   end
 
   private
