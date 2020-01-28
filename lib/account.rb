@@ -1,5 +1,4 @@
 class Account
-  attr_reader :balance
 
   ERROR = {
     valid_number: 'Please enter a valid number amount',
@@ -16,7 +15,7 @@ class Account
 
     @balance += amount
     @transactions.entry(amount, @balance, :credit)
-    "Thankyou. Your new balance is #{@balance}.00"
+    @balance
   end
 
   def withdraw(amount)
@@ -25,7 +24,7 @@ class Account
 
     @balance -= amount
     @transactions.entry(amount, @balance, :debit)
-    "Thankyou. Your new balance is #{@balance}.00"
+    @balance
   end
 
   private
